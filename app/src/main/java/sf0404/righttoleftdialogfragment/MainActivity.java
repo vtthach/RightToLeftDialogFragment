@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BaseDialogFragment fragment = new BaseDialogFragment();
+                CustomWindowDialogFragment fragment = new RightToLeftDialogFragment();
                 fragment.show(getSupportFragmentManager(), null);
             }
         });
