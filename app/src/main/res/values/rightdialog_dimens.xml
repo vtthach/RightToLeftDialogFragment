@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dialog_right_margin_left_right_bottom">15dp</dimen>
+    <dimen name="dialog_right_margin_top">30dp</dimen>
+    <dimen name="dialog_right_button_radius">6dp</dimen>
+</resources>
