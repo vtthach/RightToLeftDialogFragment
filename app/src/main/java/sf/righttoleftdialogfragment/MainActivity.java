@@ -1,4 +1,4 @@
-package sf0404.righttoleftdialogfragment;
+package sf.righttoleftdialogfragment;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomWindowDialogFragment fragment = new RightToLeftDialogFragment();
+                AccMgtEnterEmailDialogFragment fragment = new AccMgtEnterEmailDialogFragment();
                 fragment.show(getSupportFragmentManager(), null);
             }
         });

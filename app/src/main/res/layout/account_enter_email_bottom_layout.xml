@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_4"
+    style="@style/AccountDialogRightRowContainer"
+    android:layout_below="@+id/row_3"
+    android:layout_marginTop="8dp"
+    android:background="@android:color/transparent"
+    android:padding="0dp">
+
+    <TextView
+        android:id="@+id/labelNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remember this is your private information. Please make sure that you enter the correct email address."
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelNotice"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dialog_right_margin_top"
+        android:paddingRight="@dimen/dialog_right_margin_top"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@style/AccountDialogRightNegPosButton"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/AccountDialogRightNegPosButton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/dialogright_selector_btn_positive"
+            android:text="Submit" />
+
+    </LinearLayout>
+
+</RelativeLayout>

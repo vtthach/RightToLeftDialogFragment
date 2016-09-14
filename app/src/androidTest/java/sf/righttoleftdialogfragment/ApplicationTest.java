@@ -1,4 +1,4 @@
-package sf0404.righttoleftdialogfragment;
+package sf.righttoleftdialogfragment;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

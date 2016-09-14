@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AccountDialogRightRootContainer">
+    <!--Width & height of root layout will override by window param when use this layout for Dialog-->
+    <!--Keep unused xmlns:app for custom namespace in style -->
+
+    <TextView
+        android:id="@+id/tvTittle"
+        style="@style/AccountDialogRightHeading"
+        android:text="Enter the email address\nwhere you would like to\nreceive your statement" />
+
+    <RelativeLayout
+        android:id="@+id/row_1"
+        style="@style/AccountDialogRightRowContainer"
+        android:layout_below="@id/tvTittle"
+        android:layout_marginTop="@dimen/dialog_right_margin_left_right_bottom">
+
+        <TextView
+            android:id="@+id/tvSelectedTitle"
+            style="@style/AccountDialogRightTextTitle"
+            android:text="Last month" />
+
+        <TextView
+            android:id="@+id/tvSelectSubTitle"
+            style="@style/AccountDialogRightSubTitle"
+            android:layout_below="@id/tvSelectedTitle"
+            android:gravity="center_vertical"
+            android:text="1 calendar month." />
+    </RelativeLayout>
+
+    <!--Main recipient-->
+    <RelativeLayout
+        android:id="@+id/row_2"
+        style="@style/AccountDialogRightRowContainer"
+        android:layout_below="@+id/row_1"
+        android:layout_marginTop="@dimen/dialog_right_margin_left_right_bottom"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvTitleTo1"
+            style="@style/AccountDialogRightTextTitle"
+            android:text="To" />
+
+        <EditText
+            android:id="@+id/edEmail1"
+            style="@style/AccountDialogRightSubTitle"
+            android:layout_below="@id/tvTitleTo1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:text="statements@email.com" />
+
+        <TextView
+            android:id="@+id/btnChange"
+            style="@style/AccountDialogRightButtonBlue"
+            android:text="Change" />
+    </RelativeLayout>
+
+    <!--Add other recipient-->
+    <RelativeLayout
+        android:id="@+id/row_3"
+        style="@style/AccountDialogRightRowContainer"
+        android:layout_below="@+id/row_2"
+        android:layout_marginTop="@dimen/dialog_right_margin_left_right_bottom"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvTitleTo2"
+            style="@style/AccountDialogRightTextTitle"
+            android:text="To" />
+
+        <EditText
+            android:id="@+id/edEmail2"
+            style="@style/AccountDialogRightSubTitle"
+            android:layout_below="@id/tvTitleTo2"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:text="statements@email.com" />
+
+        <TextView
+            android:id="@+id/btnRemove"
+            style="@style/AccountDialogRightButtonBlue"
+            android:text="Remove" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btnAddRecipient"
+        style="@style/AccountDialogRightButtonBlue"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/row_3"
+        android:layout_marginTop="@dimen/dialog_right_margin_left_right_bottom"
+        android:text="Add another recipient"
+        android:visibility="gone" />
+
+    <!--Bottom layout-->
+    <LinearLayout
+        android:id="@+id/row_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btnAddRecipient"
+        android:layout_marginTop="@dimen/dialog_right_margin_left_right_bottom"
+        android:background="@android:color/transparent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp">
+
+        <TextView
+            android:id="@+id/labelNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/account_statement_notice"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelNotice"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dialog_right_margin_top"
+            android:paddingRight="@dimen/dialog_right_margin_top"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/AccountDialogRightNegPosButton"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/AccountDialogRightNegPosButton"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/dialogright_selector_btn_positive"
+                android:text="Submit" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>
