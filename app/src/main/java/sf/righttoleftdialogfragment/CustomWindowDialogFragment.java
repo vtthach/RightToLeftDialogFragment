@@ -1,15 +1,20 @@
 package sf.righttoleftdialogfragment;
 
 import android.app.Dialog;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 
 public abstract class CustomWindowDialogFragment extends DialogFragment {
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -18,8 +23,13 @@ public abstract class CustomWindowDialogFragment extends DialogFragment {
         Window window = dialog.getWindow();
         window.setGravity(getGravity());
         window.requestFeature(Window.FEATURE_NO_TITLE);
-        window.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         window.setWindowAnimations(getAnimationStyle());
+
+//        // Make the dialog possible to be outside touch
+        window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         return inflater.inflate(getLayoutId(), null);
     }
 

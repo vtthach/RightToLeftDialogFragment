@@ -2,15 +2,19 @@ package sf.righttoleftdialogfragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.View;
 
-/**
- * Created by thach.vo on 14/09/2016.
- */
-public class AccMgtEnterEmailDialogFragment extends RightDialogFragment {
+public class AccMgtEnterEmailDialogFragment2 extends RightDialogFragment {
+
     @Override
     protected int getLayoutId() {
         return R.layout.account_enter_email_dialog_fragment;
+    }
+
+    @Override
+    protected int getGravity() {
+        return Gravity.LEFT;
     }
 
     @Override
@@ -18,7 +22,7 @@ public class AccMgtEnterEmailDialogFragment extends RightDialogFragment {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.btnChange).setOnClickListener(v -> {
             MainActivity activity = (MainActivity) getActivity();
-            activity.showNotification("Init 1" + System.currentTimeMillis());
+            activity.showNotification("Init 2" + System.currentTimeMillis());
         });
     }
 }

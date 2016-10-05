@@ -2,8 +2,6 @@
 <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/AccountDialogRightRootContainer">
     <!--Width & height of root layout will override by window param when use this layout for Dialog-->
-    <!--Keep unused xmlns:app for custom namespace in style -->
-
     <TextView
         android:id="@+id/tvTittle"
         style="@style/AccountDialogRightHeading"
@@ -20,7 +18,7 @@
             style="@style/AccountDialogRightTextTitle"
             android:text="Last month" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvSelectSubTitle"
             style="@style/AccountDialogRightSubTitle"
             android:layout_below="@id/tvSelectedTitle"
@@ -73,6 +71,7 @@
             style="@style/AccountDialogRightSubTitle"
             android:layout_below="@id/tvTitleTo2"
             android:background="@null"
+            android:imeOptions="flagNoFullscreen"
             android:gravity="center_vertical"
             android:text="statements@email.com" />
 

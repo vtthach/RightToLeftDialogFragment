@@ -7,17 +7,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mToast = Toast.makeText(this, "", Toast.LENGTH_LONG);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
                 fragment.show(getSupportFragmentManager(), null);
             }
         });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AccMgtEnterEmailDialogFragment2 fragment2 = new AccMgtEnterEmailDialogFragment2();
+                fragment2.show(getSupportFragmentManager(), null);
+            }
+        });
+    }
+
+    private void showToast(long l) {
+        mToast.setText(" " + l);
+        mToast.show();
     }
 
     @Override
@@ -47,5 +65,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    NotificationView notificationView;
+
+    public void showNotification(String msg) {
+        if (notificationView == null) {
+            notificationView = new NotificationView.Builder(this)
+                    .message(msg)
+                    .show();
+        } else {
+            notificationView.updateData(msg, 0);
+        }
     }
 }
