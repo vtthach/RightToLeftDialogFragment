@@ -18,7 +18,7 @@ public class AccMgtEnterEmailDialogFragment extends RightDialogFragment {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.btnChange).setOnClickListener(v -> {
             MainActivity activity = (MainActivity) getActivity();
-            activity.showNotification("Init 1" + System.currentTimeMillis());
+            activity.showNotificationNewSingleInstance("Init 1" + System.currentTimeMillis());
         });
     }
 }

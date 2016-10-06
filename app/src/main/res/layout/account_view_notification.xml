@@ -3,7 +3,7 @@
     android:layout_width="400dp"
     android:layout_height="100dp"
     android:layout_gravity="center_horizontal|top"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="100dp"
     android:background="#FFA">
 
     <ImageView
@@ -24,7 +24,9 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:clickable="true"
         android:text="Test close"
+        android:background="@drawable/dialogright_selector_btn_negative"
         android:textSize="20sp" />
 
     <TextView

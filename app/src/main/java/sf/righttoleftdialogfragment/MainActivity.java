@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 fragment2.show(getSupportFragmentManager(), null);
             }
         });
+
+        FloatingActionButton fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showNotificationNewInstance(System.currentTimeMillis() + "");
+            }
+        });
     }
 
     private void showToast(long l) {
@@ -58,18 +66,16 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     NotificationView notificationView;
 
-    public void showNotification(String msg) {
+    public void showNotificationUpdateData(String msg) {
         if (notificationView == null) {
             notificationView = new NotificationView.Builder(this)
                     .message(msg)
@@ -77,5 +83,17 @@ public class MainActivity extends AppCompatActivity {
         } else {
             notificationView.updateData(msg, 0);
         }
+        showToast(System.currentTimeMillis());
+    }
+
+    public void showNotificationNewSingleInstance(String msg) {
+        if (notificationView != null) {
+            notificationView.dismiss();
+        }
+        notificationView = new NotificationView.Builder(MainActivity.this).message(msg).show();
+    }
+
+    public void showNotificationNewInstance(String msg) {
+        notificationView = new NotificationView.Builder(MainActivity.this).message(msg).show();
     }
 }

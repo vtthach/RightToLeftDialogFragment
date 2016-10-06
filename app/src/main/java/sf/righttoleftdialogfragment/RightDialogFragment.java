@@ -2,7 +2,6 @@ package sf.righttoleftdialogfragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 
@@ -27,7 +26,6 @@ public abstract class RightDialogFragment extends CustomWindowDialogFragment {
     }
 
     private int getMastheadSize() {
-        Log.i("vtt", "getMastheadSize " + dpToPixel(160));
         return dpToPixel(160);
     }
 
